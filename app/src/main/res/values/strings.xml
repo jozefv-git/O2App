@@ -15,6 +15,11 @@
     <string name="generate_highlight_regenerate_code">Code generated!</string>
     <string name="generate_description_regenerate_code">Your currently generated code.</string>
 
+    <string name="activate_top_app_bar">Activate</string>
+    <string name="activate_highlight_good_luck">Good luck!</string>
+    <string name="activate_description_good_luck">Lets try to activate your code.</string>
+    <string name="activate_error_general">Something is really off.</string>
+
 
     <string name="active">Active</string>
     <string name="inactive">Inactive</string>
