@@ -1,16 +1,17 @@
 package com.jozefv.o2app.core.data
 
+import com.jozefv.o2app.core.domain.util.CoroutineDispatcherProvider
 import com.jozefv.o2app.core.domain.util.ErrorResult
 import com.jozefv.o2app.core.domain.util.ResultHandler
 import io.ktor.client.call.NoTransformationFoundException
 import io.ktor.client.call.body
 import io.ktor.client.statement.HttpResponse
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.nio.channels.UnresolvedAddressException
 
 suspend inline fun <reified T> ktorHttpNetworkResponse(
-    request: () -> HttpResponse,
+    coroutineDispatcherProvider: CoroutineDispatcherProvider,
+    request: () -> HttpResponse
 ): ResultHandler<T, ErrorResult.NetworkError> {
     val response = try {
         request()
@@ -29,7 +30,7 @@ suspend inline fun <reified T> ktorHttpNetworkResponse(
     return when (response.status.value) {
         in 200..299 -> {
             try {
-                withContext(Dispatchers.IO) {
+                withContext(coroutineDispatcherProvider.io) {
                     ResultHandler.Success(response.body<T>())
                 }
             } catch (e: NoTransformationFoundException) {

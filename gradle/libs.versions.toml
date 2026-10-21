@@ -47,6 +47,8 @@ assertk = { module = "com.willowtreeapps.assertk:assertk", version.ref = "assert
 turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
 #coroutine test
 coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutineTest" }
+#ktor test
+ktor-client-mock = {module = "io.ktor:ktor-client-mock",version.ref = "ktor"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -65,5 +67,6 @@ test = [
     "junit",
     "assertk",
     "turbine",
-    "coroutines-test"
+    "coroutines-test",
+    "ktor-client-mock"
 ]
