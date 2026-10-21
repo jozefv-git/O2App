@@ -11,12 +11,16 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.jozefv.o2app.R
 import com.jozefv.o2app.core.presentation.components.CustomScaffold
 import com.jozefv.o2app.core.presentation.components.CustomTopAppBar
@@ -26,14 +30,46 @@ import com.jozefv.o2app.core.presentation.components.text.CustomScreenDescriptio
 import com.jozefv.o2app.core.presentation.components.text.CustomScreenHighlightText
 import com.jozefv.o2app.core.presentation.model.CustomIconPainter
 import com.jozefv.o2app.core.presentation.theme.O2AppTheme
+import com.jozefv.o2app.core.presentation.util.ObserveAsEvents
 import com.jozefv.o2app.feat_dashboard.presentation.components.card.CustomCodeStatusCard
 import com.jozefv.o2app.feat_dashboard.presentation.preview.codeStatusUiPreview
+import kotlinx.coroutines.launch
+import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun HomeScreenRoot(
+    viewModel: HomeViewModel = koinViewModel(),
     onGenerateClick: () -> Unit,
     onActivateClick: () -> Unit,
 ) {
+    val state by viewModel.state.collectAsStateWithLifecycle()
+    val snackBarHostState = remember { SnackbarHostState() }
+    val scope = rememberCoroutineScope()
+    val context = LocalContext.current
+    ObserveAsEvents(viewModel.eventChannel) { event ->
+        when (event) {
+            is HomeEvent.Error -> {
+                scope.launch {
+                    snackBarHostState.showSnackbar(event.error.asString(context))
+                }
+            }
+
+            is HomeEvent.Activate -> {
+                onActivateClick()
+            }
+        }
+    }
+    HomeScreen(
+        modifier = Modifier.fillMaxSize(),
+        state = state,
+        snackBarHostState = snackBarHostState,
+        onAction = { action ->
+            if (action is HomeAction.OnGenerateClick) {
+                onGenerateClick()
+            }
+            viewModel.onAction(action)
+        }
+    )
 }
 
 @Composable
