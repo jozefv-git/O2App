@@ -10,11 +10,13 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.jozefv.o2app.R
 import com.jozefv.o2app.core.presentation.components.CustomScaffold
 import com.jozefv.o2app.core.presentation.components.CustomTopAppBar
@@ -24,15 +26,36 @@ import com.jozefv.o2app.core.presentation.components.text.CustomScreenDescriptio
 import com.jozefv.o2app.core.presentation.components.text.CustomScreenHighlightText
 import com.jozefv.o2app.core.presentation.model.CustomIconPainter
 import com.jozefv.o2app.core.presentation.theme.O2AppTheme
+import com.jozefv.o2app.core.presentation.util.ObserveAsEvents
 import com.jozefv.o2app.feat_dashboard.presentation.components.card.CustomCodeCard
 import com.jozefv.o2app.feat_dashboard.presentation.preview.codeStatusUiPreview
+import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun GenerateCodeScreenRoot(
+    viewModel: GenerateCodeViewModel = koinViewModel(),
     onSaveSuccess: () -> Unit,
     onBackClick: () -> Unit,
 ) {
+    val state by viewModel.state.collectAsStateWithLifecycle()
+    ObserveAsEvents(viewModel.eventChannel) { event ->
+        when (event) {
+            is GenerateCodeEvent.SaveSuccess -> {
+                onSaveSuccess()
+            }
+        }
+    }
 
+    GenerateCodeScreen(
+        modifier = Modifier.fillMaxSize(),
+        state = state,
+        onAction = { action ->
+            if (action is GenerateCodeAction.OnBackClick) {
+                onBackClick()
+            }
+            viewModel.onAction(action)
+        }
+    )
 }
 
 @Composable
