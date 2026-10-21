@@ -1,7 +1,19 @@
 <resources>
     <string name="app_name">O2App</string>
 
+    <string name="home_top_app_bar">O2</string>
+    <string name="home_highlight_welcome">Welcome!</string>
+    <string name="home_description_welcome">In order to start, please generate your code.</string>
+    <string name="home_highlight_almost">Almost done!</string>
+    <string name="home_description_almost">Your code was successfully generated. Make sure to activate it, or generate a new one.</string>
+    <string name="home_highlight_great">Your code is active!</string>
+    <string name="home_description_great">Use it together with our offers.</string>
+
     <string name="active">Active</string>
     <string name="inactive">Inactive</string>
     <string name="content_empty">-</string>
+
+    <!--Buttons -->
+    <string name="button_generate_code">Generate code</string>
+    <string name="button_activate_code">Activate code</string>
 </resources>
