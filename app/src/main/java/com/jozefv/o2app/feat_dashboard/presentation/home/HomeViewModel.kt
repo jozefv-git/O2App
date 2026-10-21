@@ -19,7 +19,7 @@ import kotlinx.coroutines.plus
 
 class HomeViewModel(
     private val repository: Repository,
-    private val coroutineDispatcherProvider: CoroutineDispatcherProvider
+    private val coroutineDispatcherProvider: CoroutineDispatcherProvider,
 ) : ViewModel() {
     private val _state = MutableStateFlow(HomeState())
     val state = _state.asStateFlow()
@@ -66,6 +66,7 @@ class HomeViewModel(
                 }
             }
             // We navigate directly in our UI
+            is HomeAction.OnInfoClick -> Unit
             is HomeAction.OnGenerateClick -> Unit
         }
     }

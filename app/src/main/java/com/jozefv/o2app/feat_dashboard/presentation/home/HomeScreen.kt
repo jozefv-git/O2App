@@ -39,6 +39,7 @@ import org.koin.androidx.compose.koinViewModel
 @Composable
 fun HomeScreenRoot(
     viewModel: HomeViewModel = koinViewModel(),
+    onInfoClick: () -> Unit,
     onGenerateClick: () -> Unit,
     onActivateClick: () -> Unit,
 ) {
@@ -66,6 +67,9 @@ fun HomeScreenRoot(
         onAction = { action ->
             if (action is HomeAction.OnGenerateClick) {
                 onGenerateClick()
+            }
+            if(action is HomeAction.OnInfoClick){
+                onInfoClick()
             }
             viewModel.onAction(action)
         }
@@ -97,6 +101,16 @@ private fun HomeScreen(
             CustomTopAppBar(
                 modifier = Modifier.fillMaxWidth(),
                 title = stringResource(R.string.home_top_app_bar),
+                trailingContent = listOf(
+                    CustomIconPainter(
+                        iconPainter =
+                            painterResource(R.drawable.info_24_px),
+                        iconDescription = stringResource(R.string.button_info),
+                        onClick = {
+                            onAction(HomeAction.OnInfoClick)
+                        }
+                    )
+                ),
                 scrollBehavior = scrollBehavior
             )
         },
