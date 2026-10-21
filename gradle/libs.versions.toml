@@ -1,0 +1,69 @@
+[versions]
+agp = "9.4.1"
+kotlin = "2.4.21"
+coreKtx = "1.19.1"
+junit = "4.13.2"
+lifecycleRuntimeKtx = "2.11.0"
+activityCompose = "1.13.0"
+composeBom = "2026.09.00"
+navigationCompose = "2.10.2"
+kotlinXSerializationJson = "1.11.0"
+koin = "4.2.2"
+ktor = "3.6.0"
+jetbrainsSerialization = "2.4.21"
+assertk = "0.28.1"
+turbine = "1.2.1"
+coroutineTest = "1.11.0"
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-compose-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+
+#Navigation
+androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
+#Data serialization
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinXSerializationJson" }
+#Koin - includes koin-compose + koin-compose-viewmodel, plus KoinActivityScope and KoinFragmentScope
+koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }
+#Ktor
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor" }
+ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
+#Use okhttp if network app inspection need
+#ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
+ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+#assertk
+assertk = { module = "com.willowtreeapps.assertk:assertk", version.ref = "assertk" }
+#turbine
+turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
+#coroutine test
+coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutineTest" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+jetbrains-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "jetbrainsSerialization" }
+
+[bundles]
+ktor = [
+    "ktor-client-core",
+    "ktor-client-logging",
+    "ktor-client-cio",
+    "ktor-client-content-negotiation",
+    "ktor-serialization-kotlinx-json"
+]
+test = [
+    "junit",
+    "assertk",
+    "turbine",
+    "coroutines-test"
+]
