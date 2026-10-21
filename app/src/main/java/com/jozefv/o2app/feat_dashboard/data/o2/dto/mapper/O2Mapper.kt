@@ -1,6 +1,6 @@
-package com.jozefv.o2app.feat_dashboard.data.dto.mapper
+package com.jozefv.o2app.feat_dashboard.data.o2.dto.mapper
 
-import com.jozefv.o2app.feat_dashboard.data.dto.O2Dto
+import com.jozefv.o2app.feat_dashboard.data.o2.dto.O2Dto
 import com.jozefv.o2app.feat_dashboard.domain.util.o2.O2
 
 /**

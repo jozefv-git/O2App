@@ -7,6 +7,7 @@ import com.jozefv.o2app.core.data.HttpClientFactory
 import com.jozefv.o2app.core.data.o2.O2ApiDefaults.QUERY_CODE_PARAM
 import com.jozefv.o2app.core.domain.util.ErrorResult
 import com.jozefv.o2app.core.domain.util.ResultHandler
+import com.jozefv.o2app.feat_dashboard.data.o2.Ktor02Api
 import com.jozefv.o2app.feat_dashboard.domain.util.o2.O2
 import io.ktor.client.engine.mock.MockEngine
 import io.ktor.client.engine.mock.respond

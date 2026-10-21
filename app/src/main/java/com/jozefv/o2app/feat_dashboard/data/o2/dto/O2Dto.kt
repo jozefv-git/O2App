@@ -1,4 +1,4 @@
-package com.jozefv.o2app.feat_dashboard.data.dto
+package com.jozefv.o2app.feat_dashboard.data.o2.dto
 
 import kotlinx.serialization.Serializable
 
