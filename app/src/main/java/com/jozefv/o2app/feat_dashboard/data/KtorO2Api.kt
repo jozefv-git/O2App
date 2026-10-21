@@ -2,6 +2,7 @@ package com.jozefv.o2app.feat_dashboard.data
 
 import com.jozefv.o2app.core.data.ktorHttpNetworkResponse
 import com.jozefv.o2app.core.data.o2.O2ApiDefaults.QUERY_CODE_PARAM
+import com.jozefv.o2app.core.domain.util.CoroutineDispatcherProvider
 import com.jozefv.o2app.core.domain.util.ErrorResult
 import com.jozefv.o2app.core.domain.util.ResultHandler
 import com.jozefv.o2app.feat_dashboard.data.dto.O2Dto
@@ -13,10 +14,14 @@ import io.ktor.client.HttpClient
 import io.ktor.client.request.get
 import io.ktor.client.request.parameter
 
-class Ktor02Api(private val httpClient: HttpClient) : O2Api {
+class Ktor02Api(
+    private val httpClient: HttpClient,
+    private val coroutineDispatcherProvider: CoroutineDispatcherProvider,
+) : O2Api {
     override suspend fun activateCode(code: O2CodeAlias): ResultHandler<O2, ErrorResult.NetworkError> {
         return when (val result =
             ktorHttpNetworkResponse<O2Dto>(
+                coroutineDispatcherProvider = coroutineDispatcherProvider,
                 request = {
                     httpClient.get {
                         parameter(QUERY_CODE_PARAM, code)
