@@ -21,10 +21,16 @@ object DashboardGraph {
     data object ActivateCode
 }
 
-fun NavGraphBuilder.dashboardGraph(navHostController: NavHostController) {
+fun NavGraphBuilder.dashboardGraph(
+    navHostController: NavHostController,
+    onInfoClick: () -> Unit
+) {
     navigation<DashboardGraph>(startDestination = DashboardGraph.Home) {
         composable<DashboardGraph.Home> {
             HomeScreenRoot(
+                onInfoClick = {
+                    onInfoClick()
+                },
                 onGenerateClick = {
                     navHostController.navigate(DashboardGraph.GenerateCode)
                 },

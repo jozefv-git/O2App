@@ -5,15 +5,23 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.jozefv.o2app.feat_dashboard.presentation.navigation.DashboardGraph
 import com.jozefv.o2app.feat_dashboard.presentation.navigation.dashboardGraph
+import com.jozefv.o2app.feat_info.presenation.navigation.InfoGraph
+import com.jozefv.o2app.feat_info.presenation.navigation.infoGraph
 
 @Composable
 fun NavigationRoot(
-    navHostController: NavHostController
-){
+    navHostController: NavHostController,
+) {
     NavHost(
-        navHostController,
+        navController = navHostController,
         startDestination = DashboardGraph
-    ){
-        dashboardGraph(navHostController)
+    ) {
+        dashboardGraph(
+            navHostController = navHostController,
+            onInfoClick = {
+                navHostController.navigate(InfoGraph)
+            }
+        )
+        infoGraph(navHostController)
     }
 }

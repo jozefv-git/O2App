@@ -21,6 +21,10 @@
     <string name="activate_error_general">Something is really off.</string>
 
 
+    <string name="info_top_app_bar">Info</string>
+    <string name="info_highlight">Quick demo!</string>
+    <string name="info_description">The focus of this application is to showcase software engineering in the form of minimum viable product (MVP). This includes both UX and UI design. Whether you found this interesting or not, feel free to connect on Linked-In and let\'s have a chat! :)</string>
+
     <string name="active">Active</string>
     <string name="inactive">Inactive</string>
     <string name="content_empty">-</string>
@@ -40,4 +44,6 @@
     <string name="button_activate_code">Activate code</string>
     <string name="button_regenerate_code">Regenerate code</string>
     <string name="button_save_code">Save code</string>
+    <string name="button_linkedin">LinkedIn</string>
+    <string name="button_info">Info</string>
 </resources>
