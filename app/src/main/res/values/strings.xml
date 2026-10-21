@@ -25,6 +25,15 @@
     <string name="inactive">Inactive</string>
     <string name="content_empty">-</string>
 
+    <!--Error -->
+    <string name="error_code_empty">First generate the code.</string>
+    <string name="error_code_already_activated">Code already activated.</string>
+    <string name="error_unauthorized">User unauthorized.</string>
+    <string name="error_too_many_request">Too many request. Try later.</string>
+    <string name="error_internal">Internal error.</string>
+    <string name="error_no_internet">No internet.</string>
+    <string name="error_other">Something went wrong.</string>
+
     <!--Buttons -->
     <string name="button_back">Back</string>
     <string name="button_generate_code">Generate code</string>
