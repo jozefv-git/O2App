@@ -4,6 +4,7 @@ import android.app.Application
 import com.jozefv.o2app.app.di.appModule
 import com.jozefv.o2app.core.di.coreModule
 import com.jozefv.o2app.feat_dashboard.di.dashboardModule
+import com.jozefv.o2app.feat_info.di.infoModule
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -19,7 +20,8 @@ class O2App : Application() {
             modules(
                 appModule,
                 coreModule,
-                dashboardModule
+                dashboardModule,
+                infoModule
             )
         }
     }
