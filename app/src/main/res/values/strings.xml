@@ -9,11 +9,21 @@
     <string name="home_highlight_great">Your code is active!</string>
     <string name="home_description_great">Use it together with our offers.</string>
 
+    <string name="generate_top_app_bar">Generate</string>
+    <string name="generate_highlight_generate_code">Lets go!</string>
+    <string name="generate_description_generate_code">Generate your code.</string>
+    <string name="generate_highlight_regenerate_code">Code generated!</string>
+    <string name="generate_description_regenerate_code">Your currently generated code.</string>
+
+
     <string name="active">Active</string>
     <string name="inactive">Inactive</string>
     <string name="content_empty">-</string>
 
     <!--Buttons -->
+    <string name="button_back">Back</string>
     <string name="button_generate_code">Generate code</string>
     <string name="button_activate_code">Activate code</string>
+    <string name="button_regenerate_code">Regenerate code</string>
+    <string name="button_save_code">Save code</string>
 </resources>
