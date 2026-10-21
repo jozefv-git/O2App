@@ -1,4 +1,4 @@
-package com.jozefv.o2app.ui.theme
+package com.jozefv.o2app.core.presentation.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme

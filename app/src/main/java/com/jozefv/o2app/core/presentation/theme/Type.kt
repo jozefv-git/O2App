@@ -1,4 +1,4 @@
-package com.jozefv.o2app.ui.theme
+package com.jozefv.o2app.core.presentation.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.font.Font
