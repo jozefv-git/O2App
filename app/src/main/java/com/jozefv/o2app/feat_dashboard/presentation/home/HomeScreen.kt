@@ -168,7 +168,7 @@ private fun HomeScreen(
 
 @Preview
 @Composable
-fun HomeScreenWelcomeLightThemePreview() {
+private fun HomeScreenWelcomeLightThemePreview() {
     O2AppTheme(darkTheme = false) {
         HomeScreen(
             modifier = Modifier.fillMaxSize(),
@@ -181,7 +181,7 @@ fun HomeScreenWelcomeLightThemePreview() {
 
 @Preview
 @Composable
-fun HomeScreenInactiveLightThemePreview() {
+private fun HomeScreenInactiveLightThemePreview() {
     O2AppTheme(darkTheme = false) {
         HomeScreen(
             modifier = Modifier.fillMaxSize(),
@@ -194,7 +194,7 @@ fun HomeScreenInactiveLightThemePreview() {
 
 @Preview
 @Composable
-fun HomeScreenActiveLightThemePreview() {
+private fun HomeScreenActiveLightThemePreview() {
     O2AppTheme(darkTheme = false) {
         HomeScreen(
             modifier = Modifier.fillMaxSize(),
@@ -207,7 +207,7 @@ fun HomeScreenActiveLightThemePreview() {
 
 @Preview
 @Composable
-fun HomeScreenWelcomeDarkThemePreview() {
+private fun HomeScreenWelcomeDarkThemePreview() {
     O2AppTheme(darkTheme = true) {
         HomeScreen(
             modifier = Modifier.fillMaxSize(),
@@ -220,7 +220,7 @@ fun HomeScreenWelcomeDarkThemePreview() {
 
 @Preview
 @Composable
-fun HomeScreenInactiveDarkThemePreview() {
+private fun HomeScreenInactiveDarkThemePreview() {
     O2AppTheme(darkTheme = true) {
         HomeScreen(
             modifier = Modifier.fillMaxSize(),
@@ -233,7 +233,7 @@ fun HomeScreenInactiveDarkThemePreview() {
 
 @Preview
 @Composable
-fun HomeScreenActiveDarkThemePreview() {
+private fun HomeScreenActiveDarkThemePreview() {
     O2AppTheme(darkTheme = true) {
         HomeScreen(
             modifier = Modifier.fillMaxSize(),
