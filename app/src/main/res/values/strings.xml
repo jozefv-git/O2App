@@ -1,3 +1,49 @@
 <resources>
     <string name="app_name">O2App</string>
+
+    <string name="home_top_app_bar">O2</string>
+    <string name="home_highlight_welcome">Welcome!</string>
+    <string name="home_description_welcome">In order to start, please generate your code.</string>
+    <string name="home_highlight_almost">Almost done!</string>
+    <string name="home_description_almost">Your code was successfully generated. Make sure to activate it, or generate a new one.</string>
+    <string name="home_highlight_great">Your code is active!</string>
+    <string name="home_description_great">Use it together with our offers.</string>
+
+    <string name="generate_top_app_bar">Generate</string>
+    <string name="generate_highlight_generate_code">Lets go!</string>
+    <string name="generate_description_generate_code">Generate your code.</string>
+    <string name="generate_highlight_regenerate_code">Code generated!</string>
+    <string name="generate_description_regenerate_code">Your currently generated code.</string>
+
+    <string name="activate_top_app_bar">Activate</string>
+    <string name="activate_highlight_good_luck">Good luck!</string>
+    <string name="activate_description_good_luck">Lets try to activate your code.</string>
+    <string name="activate_error_general">Something is really off.</string>
+
+
+    <string name="info_top_app_bar">Info</string>
+    <string name="info_highlight">Quick demo!</string>
+    <string name="info_description">The focus of this application is to showcase software engineering in the form of minimum viable product (MVP). This includes both UX and UI design. Whether you found this interesting or not, feel free to connect on Linked-In and let\'s have a chat! :)</string>
+
+    <string name="active">Active</string>
+    <string name="inactive">Inactive</string>
+    <string name="content_empty">-</string>
+
+    <!--Error -->
+    <string name="error_code_empty">First generate the code.</string>
+    <string name="error_code_already_activated">Code already activated.</string>
+    <string name="error_unauthorized">User unauthorized.</string>
+    <string name="error_too_many_request">Too many request. Try later.</string>
+    <string name="error_internal">Internal error.</string>
+    <string name="error_no_internet">No internet.</string>
+    <string name="error_other">Something went wrong.</string>
+
+    <!--Buttons -->
+    <string name="button_back">Back</string>
+    <string name="button_generate_code">Generate code</string>
+    <string name="button_activate_code">Activate code</string>
+    <string name="button_regenerate_code">Regenerate code</string>
+    <string name="button_save_code">Save code</string>
+    <string name="button_linkedin">LinkedIn</string>
+    <string name="button_info">Info</string>
 </resources>
