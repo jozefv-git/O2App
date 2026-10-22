@@ -28,7 +28,7 @@ class ActivateCodeViewModel(
 
     init {
         // If this VM exists -> there cannot be null. E.g. if process death -
-        // don't persist the state - just start app again
+        // don't persist the state - just start app again check [MainActivity]
         viewModelScope.launch(coroutineDispatcherProvider.mainImmediate) {
             _state.update {
                 it.copy(
