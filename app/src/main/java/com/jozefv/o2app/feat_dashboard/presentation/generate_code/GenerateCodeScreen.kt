@@ -78,7 +78,7 @@ private fun GenerateCodeScreen(
 
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
     CustomScaffold(
-        modifier = modifier.fillMaxSize(),
+        modifier = modifier,
         topAppBar = {
             CustomTopAppBar(
                 modifier = Modifier.fillMaxWidth(),

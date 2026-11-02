@@ -73,7 +73,7 @@ private fun InfoScreen(
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
     val localUriHandler = LocalUriHandler.current
     CustomScaffold(
-        modifier = modifier.fillMaxSize(),
+        modifier = modifier,
         topAppBar = {
             CustomTopAppBar(
                 modifier = Modifier.fillMaxWidth(),
