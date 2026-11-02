@@ -77,6 +77,13 @@ private fun InfoScreen(
         topAppBar = {
             CustomTopAppBar(
                 modifier = Modifier.fillMaxWidth(),
+                navigationIcon = CustomIconPainter(
+                    iconPainter = painterResource(R.drawable.arrow_back_24_px),
+                    iconDescription = stringResource(R.string.button_back),
+                    onClick = {
+                        onAction(InfoAction.OnBackClick)
+                    }
+                ),
                 title = stringResource(R.string.info_top_app_bar),
                 scrollBehavior = scrollBehavior
             )
